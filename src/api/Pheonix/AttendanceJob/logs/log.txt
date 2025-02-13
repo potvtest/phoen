@@ -1,0 +1,2 @@
+2016-10-18 15:18:02,675 [10] ERROR AttendanceJob.Program - 11111111100000000000000000000000000000000
+2016-10-18 17:54:10,452 [10] ERROR AttendanceJob.Jobs.BasicAttendance - Exception Message: new expception sdffs`121123213

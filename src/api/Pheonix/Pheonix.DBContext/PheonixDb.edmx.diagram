@@ -1,0 +1,372 @@
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f09e9a490e19405e866da02cbb8ceed1" Name="Diagram1" ZoomLevel="12">
+        <EntityTypeShape EntityType="PhoenixModel.Person" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonAddress" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonContact" Width="1.5" PointX="2.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonPersonal" Width="1.5" PointX="0.5" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonAddress_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonContact_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonPersonal_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonKRADetail_Person" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonEmploymentHistory" Width="1.5" PointX="0.5" PointY="12" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmploymentHistory_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonBondDetail" Width="1.5" PointX="5.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonDependent" Width="1.5" PointX="5.75" PointY="11.875" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonExtension" Width="1.5" PointX="5.75" PointY="6.5" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonMedicalHistory" Width="1.5" PointX="5.75" PointY="3.75" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonBondDetails_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonDependent_PersonDependent" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonExtension_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonMedicalHistory_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonDeclaration" Width="1.5" PointX="3.375" PointY="21.125" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonDeclaration_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonSkillMapping" Width="1.5" PointX="6.375" PointY="0.75" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonSkillMapping_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.Designation" Width="1.5" PointX="8.375" PointY="0.875" />
+        <EntityTypeShape EntityType="PhoenixModel.Module" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="PhoenixModel.SignInSignOut" Width="1.5" PointX="8.375" PointY="9.5" />
+        <EntityTypeShape EntityType="PhoenixModel.Certifications" Width="1.5" PointX="8.875" PointY="14.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Country" Width="1.5" PointX="0.5" PointY="22.5" />
+        <EntityTypeShape EntityType="PhoenixModel.VisaType" Width="1.5" PointX="0.5" PointY="20.25" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonVisa" Width="1.5" PointX="2.75" PointY="15.25" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonVisa_Country" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonVisa_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonVisa_VisaType" />
+        <EntityTypeShape EntityType="PhoenixModel.LeaveType" Width="1.5" PointX="12.375" PointY="11" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonLeave" Width="1.5" PointX="3.375" PointY="29.25" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonLeave_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonLeave_Person1" />
+        <EntityTypeShape EntityType="PhoenixModel.PrimaryApprover" Width="1.5" PointX="15.25" PointY="13.25" />
+        <EntityTypeShape EntityType="PhoenixModel.SecondaryApprover" Width="1.5" PointX="14.625" PointY="1.75" />
+        <EntityTypeShape EntityType="PhoenixModel.ExpenseCategory" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.ClientName" Width="1.5" PointX="10.375" PointY="4.125" />
+        <EntityTypeShape EntityType="PhoenixModel.CostCenter" Width="1.5" PointX="12.375" PointY="5.125" />
+        <EntityTypeShape EntityType="PhoenixModel.Currency" Width="1.5" PointX="13.375" PointY="8.125" />
+        <EntityTypeShape EntityType="PhoenixModel.MultiRecordStage" Width="1.5" PointX="11.375" PointY="13.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Stage" Width="1.5" PointX="13.25" PointY="13.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Project" Width="1.5" PointX="16.25" PointY="10.5" />
+        <EntityTypeShape EntityType="PhoenixModel.ResourcePool" Width="1.5" PointX="6.75" PointY="1.75" />
+        <EntityTypeShape EntityType="PhoenixModel.RRFComments" Width="1.5" PointX="15.5" PointY="22.875" />
+        <EntityTypeShape EntityType="PhoenixModel.RRFSkill" Width="1.5" PointX="15.5" PointY="3" />
+        <AssociationConnector Association="PhoenixModel.FK_RRFSkills_SkillMatrix" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonInRole" Width="1.5" PointX="4.125" PointY="0.625" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonKRADetail" Width="1.5" PointX="5.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoenixModel.Role" Width="1.5" PointX="1.125" PointY="32" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonInRole_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonInRole_Role" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonReporting" Width="1.5" PointX="15.375" PointY="15.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PhoenixConfig" Width="1.5" PointX="17.375" PointY="13.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Emails" Width="1.5" PointX="17.375" PointY="17.75" />
+        <EntityTypeShape EntityType="PhoenixModel.EmailTemplate" Width="1.5" PointX="3.375" PointY="18.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Approval" Width="1.5" PointX="3.375" PointY="44.25" />
+        <AssociationConnector Association="PhoenixModel.FK_Approval_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonEmployment" Width="1.5" PointX="18.875" PointY="0.5" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmployment_Designation" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmployment_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmployment_ResourcePool" />
+        <EntityTypeShape EntityType="PhoenixModel.Navigation" Width="1.5" PointX="11.375" PointY="18.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Expense" Width="1.5" PointX="3" PointY="8.625" />
+        <AssociationConnector Association="PhoenixModel.FK_Expense_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.ExpenseDetails" Width="1.5" PointX="5.25" PointY="34.125" />
+        <AssociationConnector Association="PhoenixModel.FK_ExpenseDetails_Expesne" />
+        <EntityTypeShape EntityType="PhoenixModel.ApprovalDetail" Width="1.5" PointX="6.25" PointY="22.5" />
+        <AssociationConnector Association="PhoenixModel.FK_ApprovalDetail_Approval1" />
+        <AssociationConnector Association="PhoenixModel.FK_ApprovalDetail_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_RRFComments_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_RRFComments_Person1" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonCertification" Width="1.5" PointX="11.125" PointY="7.5" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonCertification_Certification" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonCertification_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.RRFCandidate" Width="1.5" PointX="18.75" PointY="6.375" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFCandidate_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.CompOff" Width="1.5" PointX="9.375" PointY="19" />
+        <AssociationConnector Association="PhoenixModel.FK_CompOff_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.HelpDeskComments" Width="1.5" PointX="5.25" PointY="2.875" />
+        <EntityTypeShape EntityType="PhoenixModel.HelpDeskSubCategories" Width="1.5" PointX="0.75" PointY="45.25" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonHelpDesk" Width="1.5" PointX="3.25" PointY="1.625" />
+        <AssociationConnector Association="PhoenixModel.FK_HelpDeskComments_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_HelpDeskComments_PersonHelpDesk" />
+        <AssociationConnector Association="PhoenixModel.FK__PersonHel__SubCa__12149A71" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonAssignedTo_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonHelpDesk_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.DeliveryTeam" Width="1.5" PointX="16.875" PointY="27.375" />
+        <EntityTypeShape EntityType="PhoenixModel.DeliveryUnit" Width="1.5" PointX="14" PointY="19.5" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmployment_DeliveryTeam" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmployment_DeliveryUnit" />
+        <EntityTypeShape EntityType="PhoenixModel.RRF" Width="1.5" PointX="12.875" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.RRFDetail" Width="1.5" PointX="20.375" PointY="15.75" />
+        <AssociationConnector Association="PhoenixModel.FK_RRFDetail_DeliveryTeam" />
+        <AssociationConnector Association="PhoenixModel.FK_RRFDetail_DeliveryUnit" />
+        <AssociationConnector Association="PhoenixModel.FK__RRF_Designation" />
+        <AssociationConnector Association="PhoenixModel.FK__RRF_Person" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFDetail_Person" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFDetail_Project" />
+        <AssociationConnector Association="PhoenixModel.FK__RRF_ResourcePool" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFCandidate__RRFId" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFComments_RRF" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFDetail_RRF" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFSkill_RRF" />
+        <EntityTypeShape EntityType="PhoenixModel.Traveller" Width="1.5" PointX="19.125" PointY="10.5" />
+        <AssociationConnector Association="PhoenixModel.FK_Traveller_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelTransactions" Width="1.5" PointX="21.375" PointY="6.625" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelUploads" Width="1.5" PointX="21.375" PointY="21.75" />
+        <AssociationConnector Association="PhoenixModel.FK_TravelTransactions_Traveller" />
+        <AssociationConnector Association="PhoenixModel.FK_TravelUploads_Traveller" />
+        <EntityTypeShape EntityType="PhoenixModel.KitchenPreferences" Width="1.5" PointX="27.25" PointY="1.375" />
+        <EntityTypeShape EntityType="PhoenixModel.KRACategory" Width="1.5" PointX="21.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhoenixModel.GeneralPreferences" Width="1.5" PointX="27.25" PointY="5.75" />
+        <EntityTypeShape EntityType="PhoenixModel.ServicesPreferences" Width="1.5" PointX="27.25" PointY="11.125" />
+        <EntityTypeShape EntityType="PhoenixModel.MediaPreferences" Width="1.5" PointX="27.25" PointY="14.75" />
+        <EntityTypeShape EntityType="PhoenixModel.FlightClass" Width="1.5" PointX="15.875" PointY="6.75" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelExtensionHistory" Width="1.5" PointX="23.875" PointY="10.875" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonLeaveCredit" Width="1.5" PointX="2.75" PointY="52.75" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonLeaveCredit_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.HelpDeskCategories" Width="1.5" PointX="3.375" PointY="25.375" />
+        <AssociationConnector Association="PhoenixModel.FK__AssignedRole_RoleID" />
+        <AssociationConnector Association="PhoenixModel.FK__PersonHel__Categ__11207638" />
+        <AssociationConnector Association="PhoenixModel.FK_HelpDeskSubCategories_HelpDeskCategories" />
+        <EntityTypeShape EntityType="PhoenixModel.ClientInformation" Width="1.5" PointX="12.625" PointY="24.75" />
+        <AssociationConnector Association="PhoenixModel.FK_ClientInformation_ClientName" />
+        <AssociationConnector Association="PhoenixModel.FK_Traveller_ClientInformation" />
+        <EntityTypeShape EntityType="PhoenixModel.MealPreference" Width="1.5" PointX="19.125" PointY="27.875" />
+        <EntityTypeShape EntityType="PhoenixModel.SeatLocationPreference" Width="1.5" PointX="19.125" PointY="25.5" />
+        <EntityTypeShape EntityType="PhoenixModel.HotelRoomType" Width="1.5" PointX="6" PointY="20.375" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelBookingAgency" Width="1.5" PointX="9" PointY="23.375" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelCardType" Width="1.5" PointX="23" PointY="16.375" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelFLightAirlines" Width="1.5" PointX="23" PointY="19.375" />
+        <EntityTypeShape EntityType="PhoenixModel.Flight" Width="1.5" PointX="21.375" PointY="25.375" />
+        <AssociationConnector Association="PhoenixModel.FK_Flight_Traveller" />
+        <EntityTypeShape EntityType="PhoenixModel.FlightDetails" Width="1.5" PointX="23.625" PointY="25.875" />
+        <AssociationConnector Association="PhoenixModel.FK_FlightDetails_Flight" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelMoneyTransactions" Width="1.5" PointX="21.625" PointY="31.375" />
+        <AssociationConnector Association="PhoenixModel.FK_TravelMoneyTransactions_Traveller" />
+        <EntityTypeShape EntityType="PhoenixModel.HotelBooking" Width="1.5" PointX="21.375" PointY="0.75" />
+        <AssociationConnector Association="PhoenixModel.FK_GeneralPreferences_HotelBooking" />
+        <AssociationConnector Association="PhoenixModel.FK_HotelBooking_Traveller" />
+        <AssociationConnector Association="PhoenixModel.FK_KitchenPreferences_HotelBooking" />
+        <AssociationConnector Association="PhoenixModel.FK_MediaPerferences_HotelBooking" />
+        <AssociationConnector Association="PhoenixModel.FK_ServicesPreferences_HotelBooking" />
+        <EntityTypeShape EntityType="PhoenixModel.InternetPreferences" Width="1.5" PointX="23.625" PointY="2.375" />
+        <AssociationConnector Association="PhoenixModel.FK_InternetPreferences_HotelBooking" />
+        <EntityTypeShape EntityType="PhoenixModel.TravelDetails" Width="1.5" PointX="21.875" PointY="10.75" />
+        <AssociationConnector Association="PhoenixModel.FK_TravelDetails_Traveller" />
+        <AssociationConnector Association="PhoenixModel.FK_TravelExtensionHistory_TravelDetails" />
+        <EntityTypeShape EntityType="PhoenixModel.EmailAction" Width="1.5" PointX="2.75" PointY="37.25" />
+        <AssociationConnector Association="PhoenixModel.FK_EmailAction_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.ApprisalQuestions" Width="1.5" PointX="23.375" PointY="5.875" />
+        <EntityTypeShape EntityType="PhoenixModel.ApprisalParameters" Width="1.5" PointX="23.375" PointY="22" />
+        <EntityTypeShape EntityType="PhoenixModel.AppraiseForm" Width="1.5" PointX="29.625" PointY="5.125" />
+        <EntityTypeShape EntityType="PhoenixModel.AppraiserForm" Width="1.5" PointX="29.625" PointY="11.625" />
+        <AssociationConnector Association="PhoenixModel.FK_AppraiseForm_ApprisalQuestions" />
+        <AssociationConnector Association="PhoenixModel.FK_AppraiseForm_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_AppraiserForm_AppraisalParameter" />
+        <AssociationConnector Association="PhoenixModel.FK_AppraiserForm_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.AppraisalReporting" Width="1.5" PointX="2.875" PointY="56.75" />
+        <AssociationConnector Association="PhoenixModel.FK_Appraise_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_Appraiser_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_Assigned_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_Reviewer_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.CustomerContract" Width="1.5" PointX="12.625" PointY="41.125" />
+        <EntityTypeShape EntityType="PhoenixModel.CustomerAddress" Width="1.5" PointX="25.375" PointY="18.75" />
+        <EntityTypeShape EntityType="PhoenixModel.CustomerContactPerson" Width="1.5" PointX="12.625" PointY="32.625" />
+        <EntityTypeShape EntityType="PhoenixModel.EmploymentStatus" Width="1.5" PointX="25.375" PointY="22.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSTasks" Width="1.5" PointX="5.125" PointY="69.625" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSTaskTypes" Width="1.5" PointX="25" PointY="33.625" />
+        <EntityTypeShape EntityType="PhoenixModel.CompensatoryOffException" Width="1.5" PointX="26.375" PointY="8.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonConfirmation" Width="1.5" PointX="2.875" PointY="67.75" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonConfirmation_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.DeletedRecordsLogDetails" Width="1.5" PointX="5.375" PointY="26.75" />
+        <EntityTypeShape EntityType="PhoenixModel.Customer" Width="1.5" PointX="10.375" PointY="37" />
+        <AssociationConnector Association="PhoenixModel.FK_CustomerContactPerson_Customer" />
+        <AssociationConnector Association="PhoenixModel.FK_CustomerContract_Customer" />
+        <EntityTypeShape EntityType="PhoenixModel.ProjectList" Width="1.5" PointX="0.75" PointY="68.875" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSTasks_ProjectList" />
+        <AssociationConnector Association="PhoenixModel.FK_ProjectList_ProjectList" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonEmploymentChangeLog" Width="1.5" PointX="27.375" PointY="18.75" />
+        <EntityTypeShape EntityType="PhoenixModel.SeparationReasonMaster" Width="1.5" PointX="30" PointY="29.25" />
+        <EntityTypeShape EntityType="PhoenixModel.InvoiceSalesPeriod" Width="1.5" PointX="9.625" PointY="28.75" />
+        <EntityTypeShape EntityType="PhoenixModel.SeparationReasons" Width="1.5" PointX="11.375" PointY="29.125" />
+        <EntityTypeShape EntityType="PhoenixModel.SeperationProcess" Width="1.5" PointX="5.25" PointY="78.125" />
+        <EntityTypeShape EntityType="PhoenixModel.Separation" Width="1.5" PointX="2.875" PointY="77.25" />
+        <AssociationConnector Association="PhoenixModel.fk_person_separation_approvalid" />
+        <AssociationConnector Association="PhoenixModel.fk_person_separation_personid" />
+        <AssociationConnector Association="PhoenixModel.fk_seperationprocess_seperation" />
+        <EntityTypeShape EntityType="PhoenixModel.HolidayList" Width="1.5" PointX="18.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PhoenixModel.ExitFormEmployeeDeclaration" Width="1.5" PointX="13.375" PointY="28.75" />
+        <EntityTypeShape EntityType="PhoenixModel.OrganizationDevelopmentSuggestion" Width="1.5" PointX="5.375" PointY="29.75" />
+        <EntityTypeShape EntityType="PhoenixModel.RatingForOrganization" Width="1.5" PointX="31.375" PointY="15.75" />
+        <EntityTypeShape EntityType="PhoenixModel.RatingForReportingLead" Width="1.5" PointX="31.375" PointY="21.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationRequest" Width="1.5" PointX="29.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationRequestDetails" Width="1.5" PointX="17.375" PointY="30.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSResourceAllocationHistory" Width="1.5" PointX="31.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationRequestDetailsHistory" Width="1.5" PointX="28.375" PointY="31.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonExitProcessForm" Width="1.5" PointX="30.375" PointY="31.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSResourceAllocation" Width="1.5" PointX="26.375" PointY="27.75" />
+        <EntityTypeShape EntityType="PhoenixModel.FeedbackForLeavingOrg" Width="1.5" PointX="32.375" PointY="5.75" />
+        <EntityTypeShape EntityType="PhoenixModel.SeperationConfig" Width="1.5" PointX="8.375" PointY="25.75" />
+        <EntityTypeShape EntityType="PhoenixModel.AspNetRoles" Width="1.5" PointX="33.75" PointY="19.25" />
+        <EntityTypeShape EntityType="PhoenixModel.AspNetUserClaims" Width="1.5" PointX="38.25" PointY="20.375" />
+        <EntityTypeShape EntityType="PhoenixModel.AspNetUserLogins" Width="1.5" PointX="38.25" PointY="17.75" />
+        <EntityTypeShape EntityType="PhoenixModel.AspNetUsers" Width="1.5" PointX="36" PointY="18.125" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidateAddress" Width="1.5" PointX="35" PointY="45.625" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidateEmploymentHistory" Width="1.5" PointX="35" PointY="54.375" />
+        <EntityTypeShape EntityType="PhoenixModel.Component" Width="1.5" PointX="0.75" PointY="32.5" />
+        <EntityTypeShape EntityType="PhoenixModel.EmailRecussionTesting" Width="1.5" PointX="28.75" PointY="12.5" />
+        <EntityTypeShape EntityType="PhoenixModel.ExpenseApprovalStage" Width="1.5" PointX="7.625" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.File" Width="1.5" PointX="11" PointY="52.25" />
+        <EntityTypeShape EntityType="PhoenixModel.ModuleExtension" Width="1.5" PointX="11" PointY="49.5" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonHelpDeskChangeLog" Width="1.5" PointX="7.75" PointY="37.5" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSInvoice" Width="1.5" PointX="33.75" PointY="29.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSInvoiceDetails" Width="1.5" PointX="36" PointY="30.25" />
+        <EntityTypeShape EntityType="PhoenixModel.QualificationGroup" Width="1.5" PointX="1.375" PointY="44.375" />
+        <EntityTypeShape EntityType="PhoenixModel.ReviewerForm" Width="1.5" PointX="35.75" PointY="4.5" />
+        <EntityTypeShape EntityType="PhoenixModel.RoleEntitlement" Width="1.5" PointX="16" PointY="39.5" />
+        <EntityTypeShape EntityType="PhoenixModel.SigninSignOutStatus" Width="1.5" PointX="18.75" PointY="39.5" />
+        <EntityTypeShape EntityType="PhoenixModel.SISO" Width="1.5" PointX="3.125" PointY="88" />
+        <EntityTypeShape EntityType="PhoenixModel.sysdiagrams" Width="1.5" PointX="20.75" PointY="39.5" />
+        <EntityTypeShape EntityType="PhoenixModel.WorkLocation" Width="1.5" PointX="35.75" PointY="23.5" />
+        <EntityTypeShape EntityType="PhoenixModel.CustomerList" Width="1.5" PointX="26.75" PointY="40.5" />
+        <EntityTypeShape EntityType="PhoenixModel.phdbckup" Width="1.5" PointX="38.75" PointY="4.5" />
+        <EntityTypeShape EntityType="PhoenixModel.CosecData" Width="1.5" PointX="18.75" PointY="42.5" />
+        <AssociationConnector Association="PhoenixModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="PhoenixModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateAddress_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateEmploymentHistory_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidatePersonal_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateQualification_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateSkillMapping_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateQualification_Qualification" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateSkillMapping_SkillMatrix" />
+        <AssociationConnector Association="PhoenixModel.FK_ExpenseApprovalStage_Expense" />
+        <AssociationConnector Association="PhoenixModel.FK_ExpenseApprovalStage_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_File_Module" />
+        <AssociationConnector Association="PhoenixModel.FK_ModuleExtension_Module" />
+        <AssociationConnector Association="PhoenixModel.FK_RoleEntitlement_Navigation" />
+        <AssociationConnector Association="PhoenixModel.FK_SISO_Person" />
+        <AssociationConnector Association="PhoenixModel.FK__PMSInvoic__Invoi__121F8769" />
+        <AssociationConnector Association="PhoenixModel.FK_RoleEntitlement_Role" />
+        <AssociationConnector Association="PhoenixModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="PhoenixModel.Expense_New" Width="1.5" PointX="3.25" PointY="92.625" />
+        <EntityTypeShape EntityType="PhoenixModel.ExpenseCategory_New" Width="1.5" PointX="0.875" PointY="29.625" />
+        <EntityTypeShape EntityType="PhoenixModel.ExpenseDetails_New" Width="1.5" PointX="5.5" PointY="93.875" />
+        <AssociationConnector Association="PhoenixModel.FK_Expense_New_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_ExpenseDetails_New_Expesne" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonReportingChangeLog" Width="1.5" PointX="1" PointY="29.375" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonArrearTable" Width="1.5" PointX="33.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonPassport" Width="1.5" PointX="16" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSTimesheet" Width="1.5" PointX="29.25" PointY="41.375" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonPassport_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_Timesheet_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonPassport_PersonDependent" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSTimesheet_PMSTaskTypes" />
+        <AssociationConnector Association="PhoenixModel.FK_Timesheet_ProjectList" />
+        <AssociationConnector Association="PhoenixModel.FK_WorkLocation_WorkLocation" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonCLCredit" Width="1.5" PointX="2.875" PointY="85" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonCLCredit_Person" />
+        <AssociationConnector Association="PhoenixModel.FK__RRFDetail_Project1" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSInvoicePayments" Width="1.5" PointX="36" PointY="41" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSInvoicePayments_PMSInvoicePayments" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationRatings" Width="1.5" PointX="7.5" PointY="32" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSSkillRatings" Width="1.5" PointX="29.5" PointY="9" />
+        <EntityTypeShape EntityType="PhoenixModel.ProjectSkill" Width="1.5" PointX="9.5" PointY="33" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationBillableType" Width="1.5" PointX="33.5" PointY="14" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationExtentionRequest" Width="1.5" PointX="35.5" PointY="13.125" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationNewRequest" Width="1.5" PointX="23.5" PointY="37.125" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationReleaseRequest" Width="1.5" PointX="37.5" PointY="10" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationSkillRatings" Width="1.5" PointX="35.5" PointY="1.125" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAllocationUpdateRequest" Width="1.5" PointX="37.5" PointY="35.125" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSRoles" Width="1.5" PointX="29.375" PointY="8.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSAction" Width="1.5" PointX="37.625" PointY="44" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSActionMapping" Width="1.5" PointX="39.875" PointY="26.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PMSRoleMapping" Width="1.5" PointX="37.625" PointY="26.625" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSActionMapping_PMSAction" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSActionMapping_PMSRoleMapping" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSRoleMapping_PMSRoles" />
+        <AssociationConnector Association="PhoenixModel.FK_PMSRoleMapping_Role" />
+        <EntityTypeShape EntityType="PhoenixModel.ContractAttachments" Width="1.5" PointX="14.875" PointY="42.75" />
+        <AssociationConnector Association="PhoenixModel.FK_ContractAttachments_CustomerContract" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidateCertification" Width="1.5" PointX="11.75" PointY="57" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidatePassport" Width="1.5" PointX="20" PointY="16.375" />
+        <EntityTypeShape EntityType="PhoenixModel.TAInterviewer" Width="1.5" PointX="43.25" PointY="11.75" />
+        <EntityTypeShape EntityType="PhoenixModel.TARRF" Width="1.5" PointX="41" PointY="10.75" />
+        <EntityTypeShape EntityType="PhoenixModel.TARRFDetail" Width="1.5" PointX="16" PointY="23.375" />
+        <EntityTypeShape EntityType="PhoenixModel.TASkills" Width="1.5" PointX="43.25" PointY="14.25" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateAddress_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateEmploymentHistory_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidatePassport_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidatePersonal_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateQualification_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateSkillMapping_Candidate" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateCertification_Certification" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateQualification_Qualification" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateSkillMapping_SkillMatrix" />
+        <AssociationConnector Association="PhoenixModel.FK__TAIntervi__RRFId__4E347170" />
+        <AssociationConnector Association="PhoenixModel.FK__TASkills__RRFId__4C4C28FE" />
+        <EntityTypeShape EntityType="PhoenixModel.BGParameterList" Width="1.5" PointX="15.5" PointY="35.75" />
+        <EntityTypeShape EntityType="PhoenixModel.CustomerBGMapping" Width="1.5" PointX="17.5" PointY="35.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonBGMapping" Width="1.5" PointX="19.5" PointY="35.75" />
+        <EntityTypeShape EntityType="PhoenixModel.VCFConfigurationList" Width="1.5" PointX="26.625" PointY="36.75" />
+        <EntityTypeShape EntityType="PhoenixModel.VCFApprover" Width="1.5" PointX="12.375" PointY="37.75" />
+        <EntityTypeShape EntityType="PhoenixModel.vwCurrentAllocation" Width="1.5" PointX="40.875" PointY="17.75" />
+        <EntityTypeShape EntityType="PhoenixModel.vwHistoryAllocation" Width="1.5" PointX="40.875" PointY="30.75" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidatePersonal" Width="1.5" PointX="10.75" PointY="61" />
+        <EntityTypeShape EntityType="PhoenixModel.Candidate" Width="1.5" PointX="8.5" PointY="43.75" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidateQualificationMapping" Width="1.5" PointX="10.75" PointY="71.375" />
+        <EntityTypeShape EntityType="PhoenixModel.CandidateSkillMapping" Width="1.5" PointX="13.25" PointY="50.625" />
+        <AssociationConnector Association="PhoenixModel.FK__Candidate__CandidateAddress" />
+        <AssociationConnector Association="PhoenixModel.FK_Candidate_CandidateEmploymentHistory" />
+        <AssociationConnector Association="PhoenixModel.FK_Candidate_CandidatePassport" />
+        <AssociationConnector Association="PhoenixModel.FK_Candidate_CandidatePersonal" />
+        <AssociationConnector Association="PhoenixModel.FK_Candidate_CandidateQualificationMapping" />
+        <AssociationConnector Association="PhoenixModel.FK_Candidate_CandidateSkillMapping" />
+        <AssociationConnector Association="PhoenixModel.FK_CandidateCertification_Candidate" />
+        <EntityTypeShape EntityType="PhoenixModel.Qualification" Width="1.5" PointX="3.625" PointY="100.375" />
+        <AssociationConnector Association="PhoenixModel.FK_Qualification_CandidateQualificationMapping" />
+        <AssociationConnector Association="PhoenixModel.FK_Qualification_QualificationGroup" />
+        <EntityTypeShape EntityType="PhoenixModel.SkillMatrix" Width="1.5" PointX="9.25" PointY="55.875" />
+        <AssociationConnector Association="PhoenixModel.FK_SkillMatrix_CandidateSkillMapping" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonSkillMapping_SkillMatrix" />
+        <AssociationConnector Association="PhoenixModel.FK_SkillMatrix_ResourcePool" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonQualificationMapping" Width="1.5" PointX="6.5" PointY="50.5" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonQualification_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonQualification_Qualification" />
+        <EntityTypeShape EntityType="PhoenixModel.Jobdescription" Width="1.5" PointX="6" PointY="16" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonLeaveLedger" Width="1.5" PointX="3.375" PointY="49.25" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonLeaveLedgerHistory" Width="1.5" PointX="35" PointY="8.375" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonLeaveLedger_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.LocationLeaf" Width="1.5" PointX="38.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonSLCredit" Width="1.5" PointX="3.5" PointY="41.375" />
+        <AssociationConnector Association="PhoenixModel.FK_LocationLeaves_WorkLocation" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonSLCredit_Person" />
+		<EntityTypeShape EntityType="PhoenixModel.ReportAccessConfig" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.ReportMaster" Width="1.5" PointX="0.75" PointY="40.375" />
+        <AssociationConnector Association="PhoenixModel.FK_ReportAccessConfig_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_ReportAccessConfig_ReportMaster" />
+        <EntityTypeShape EntityType="PhoenixModel.Competency" Width="1.5" PointX="0.75" PointY="25.875" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonEmployment_Competency" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonPastExperience" Width="1.5" PointX="3.125" PointY="105" />
+        <AssociationConnector Association="PhoenixModel.FK__PersonPas__Perso__4F138710" />
+        <EntityTypeShape EntityType="PhoenixModel.KRAProgress" Width="1.5" PointX="0.875" PointY="26.125" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonKRA" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonKRAYear" Width="1.5" PointX="0.75" PointY="20" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonKRA_Person" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonKRA_PersonKRAYear" />
+        <EntityTypeShape EntityType="PhoenixModel.PersonKRAMapping" Width="1.5" PointX="29.375" PointY="37.75" />
+        <AssociationConnector Association="PhoenixModel.FK_PersonKRADetail_Person" />
+        <EntityTypeShape EntityType="PhoenixModel.ReportDropDownConfig" Width="1.5" PointX="34" PointY="26.75" />
+        <EntityTypeShape EntityType="PhoenixModel.JobScheduler" Width="1.5" PointX="33.375" PointY="26.75" />
+        <EntityTypeShape EntityType="PhoenixModel.FloatingHolidayStatus" Width="1.5" PointX="3.5" PointY="109.375" />
+        <AssociationConnector Association="PhoenixModel.FK__FloatingH__Perso__26667738" />
+        <AssociationConnector Association="PhoenixModel.FK_FloatingHolidayStatus_FloatingHolidayStatus" />
+        <EntityTypeShape EntityType="PhoenixModel.OrganizationCategory" Width="1.5" PointX="32" PointY="38.375" />
+        <EntityTypeShape EntityType="PhoenixModel.ReviewerComment" Width="1.5" PointX="5.75" PointY="61.375" />
+        <AssociationConnector Association="PhoenixModel.FK_ReviewerComment_AppraisalReporting" />
+        <EntityTypeShape EntityType="PhoenixModel.KRAFileUpload" Width="1.5" PointX="32.5" PointY="41.875" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

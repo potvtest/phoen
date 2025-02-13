@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ValuePortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="VPBenefit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="VPBenefitScope">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPComments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VPIdeaDetailID" Type="bigint" Nullable="false" />
+          <Property Name="ReviewerId" Type="int" />
+          <Property Name="ReviewerComments" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VPConfiguration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="VPCost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="VPIdeaDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdeaHeadline" Type="nvarchar" MaxLength="250" />
+          <Property Name="IdeaDescription" Type="nvarchar(max)" />
+          <Property Name="IdeaBenefits" Type="nvarchar(max)" />
+          <Property Name="RequiredEffort" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RequiredResources" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RequiredTechnologies" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SubmittedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="ExecutionApproach" Type="nvarchar(max)" />
+          <Property Name="IsEmailReceiptRequired" Type="bit" Nullable="false" />
+          <Property Name="StatusID" Type="smallint" Nullable="false" />
+          <Property Name="PriorityID" Type="smallint" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Target" Type="float" />
+          <Property Name="UniquenessQuotient" Type="varchar" MaxLength="50" />
+          <Property Name="TeammemberIds" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsLockedBy" Type="varchar" MaxLength="500" />
+          <Property Name="BusinessUnit" Type="smallint" Nullable="false" />
+          <Property Name="Stage" Type="smallint" Nullable="false" />
+          <Property Name="BenefitFactor" Type="nvarchar" MaxLength="2000" />
+          <Property Name="BenefitScope" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPPriority">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPReviewerDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VPIdeaDetailID" Type="bigint" Nullable="false" />
+          <Property Name="ReviewerComments" Type="nvarchar(max)" />
+          <Property Name="ReviewerComments2" Type="nvarchar(max)" />
+          <Property Name="ReviewerComments3" Type="nvarchar(max)" />
+          <Property Name="BenefitScore" Type="float" />
+          <Property Name="Cost" Type="float" />
+          <Property Name="FinalScore" Type="float" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__VPComment__VPIde__38996AB5">
+          <End Role="VPIdeaDetails" Type="Self.VPIdeaDetails" Multiplicity="1" />
+          <End Role="VPComments" Type="Self.VPComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPIdeaDetails">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPComments">
+              <PropertyRef Name="VPIdeaDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VPReviewe__VPIde__3B75D760">
+          <End Role="VPIdeaDetails" Type="Self.VPIdeaDetails" Multiplicity="1" />
+          <End Role="VPReviewerDetails" Type="Self.VPReviewerDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPIdeaDetails">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPReviewerDetails">
+              <PropertyRef Name="VPIdeaDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VPIdeaDetails_VCStatus">
+          <End Role="VPStatus" Type="Self.VPStatus" Multiplicity="1" />
+          <End Role="VPIdeaDetails" Type="Self.VPIdeaDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPIdeaDetails">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VPReviewerDetails_VPIdeaDetails">
+          <End Role="VPIdeaDetails" Type="Self.VPIdeaDetails" Multiplicity="1" />
+          <End Role="VPReviewerDetails" Type="Self.VPReviewerDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPIdeaDetails">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPReviewerDetails">
+              <PropertyRef Name="VPIdeaDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ValuePortalModelStoreContainer">
+          <EntitySet Name="VPBenefit" EntityType="Self.VPBenefit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPBenefitScope" EntityType="Self.VPBenefitScope" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPComments" EntityType="Self.VPComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPConfiguration" EntityType="Self.VPConfiguration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPCost" EntityType="Self.VPCost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPIdeaDetails" EntityType="Self.VPIdeaDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPPriority" EntityType="Self.VPPriority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPReviewerDetails" EntityType="Self.VPReviewerDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VPStatus" EntityType="Self.VPStatus" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__VPComment__VPIde__38996AB5" Association="Self.FK__VPComment__VPIde__38996AB5">
+            <End Role="VPIdeaDetails" EntitySet="VPIdeaDetails" />
+            <End Role="VPComments" EntitySet="VPComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VPReviewe__VPIde__3B75D760" Association="Self.FK__VPReviewe__VPIde__3B75D760">
+            <End Role="VPIdeaDetails" EntitySet="VPIdeaDetails" />
+            <End Role="VPReviewerDetails" EntitySet="VPReviewerDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VPIdeaDetails_VCStatus" Association="Self.FK_VPIdeaDetails_VCStatus">
+            <End Role="VPStatus" EntitySet="VPStatus" />
+            <End Role="VPIdeaDetails" EntitySet="VPIdeaDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VPReviewerDetails_VPIdeaDetails" Association="Self.FK_VPReviewerDetails_VPIdeaDetails">
+            <End Role="VPIdeaDetails" EntitySet="VPIdeaDetails" />
+            <End Role="VPReviewerDetails" EntitySet="VPReviewerDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ValuePortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ValuePortalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VPPriorities" EntityType="ValuePortalModel.VPPriority" />
+          <EntitySet Name="VPReviewerDetails" EntityType="ValuePortalModel.VPReviewerDetail" />
+          <EntitySet Name="VPStatus" EntityType="ValuePortalModel.VPStatu" />
+          <EntitySet Name="VPComments" EntityType="ValuePortalModel.VPComment" />
+          <EntitySet Name="VPBenefits" EntityType="ValuePortalModel.VPBenefit" />
+          <EntitySet Name="VPCosts" EntityType="ValuePortalModel.VPCost" />
+          <EntitySet Name="VPConfigurations" EntityType="ValuePortalModel.VPConfiguration" />
+          <EntitySet Name="VPBenefitScopes" EntityType="ValuePortalModel.VPBenefitScope" />
+          <EntitySet Name="VPIdeaDetails" EntityType="ValuePortalModel.VPIdeaDetail" />
+          <AssociationSet Name="FK__VPComment__VPIde__38996AB5" Association="ValuePortalModel.FK__VPComment__VPIde__38996AB5">
+            <End Role="VPIdeaDetail" EntitySet="VPIdeaDetails" />
+            <End Role="VPComment" EntitySet="VPComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__VPReviewe__VPIde__3B75D760" Association="ValuePortalModel.FK__VPReviewe__VPIde__3B75D760">
+            <End Role="VPIdeaDetail" EntitySet="VPIdeaDetails" />
+            <End Role="VPReviewerDetail" EntitySet="VPReviewerDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VPIdeaDetails_VCStatus" Association="ValuePortalModel.FK_VPIdeaDetails_VCStatus">
+            <End Role="VPStatu" EntitySet="VPStatus" />
+            <End Role="VPIdeaDetail" EntitySet="VPIdeaDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="VPPriority">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPReviewerDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="VPIdeaDetailID" Type="Int64" Nullable="false" />
+          <Property Name="ReviewerComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewerComments2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewerComments3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BenefitScore" Type="Double" />
+          <Property Name="Cost" Type="Double" />
+          <Property Name="FinalScore" Type="Double" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VPIdeaDetail" Relationship="ValuePortalModel.FK__VPReviewe__VPIde__3B75D760" FromRole="VPReviewerDetail" ToRole="VPIdeaDetail" />
+          </EntityType>
+        <EntityType Name="VPStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="VPIdeaDetails" Relationship="ValuePortalModel.FK_VPIdeaDetails_VCStatus" FromRole="VPStatu" ToRole="VPIdeaDetail" />
+        </EntityType>
+        <EntityType Name="VPComment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VPIdeaDetailID" Type="Int64" Nullable="false" />
+          <Property Name="ReviewerId" Type="Int32" />
+          <Property Name="ReviewerComments" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="VPIdeaDetail" Relationship="ValuePortalModel.FK__VPComment__VPIde__38996AB5" FromRole="VPComment" ToRole="VPIdeaDetail" />
+        </EntityType>
+        <EntityType Name="VPBenefit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VPCost">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VPConfiguration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="VPBenefitScope">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VPIdeaDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdeaHeadline" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IdeaDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdeaBenefits" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredEffort" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredResources" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredTechnologies" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="SubmittedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="ExecutionApproach" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsEmailReceiptRequired" Type="Boolean" Nullable="false" />
+          <Property Name="StatusID" Type="Int16" Nullable="false" />
+          <Property Name="PriorityID" Type="Int16" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Target" Type="Double" />
+          <Property Name="UniquenessQuotient" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TeammemberIds" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="IsLockedBy" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessUnit" Type="Int16" Nullable="false" />
+          <Property Name="Stage" Type="Int16" Nullable="false" />
+          <Property Name="BenefitFactor" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="BenefitScope" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VPComments" Relationship="ValuePortalModel.FK__VPComment__VPIde__38996AB5" FromRole="VPIdeaDetail" ToRole="VPComment" />
+          <NavigationProperty Name="VPReviewerDetails" Relationship="ValuePortalModel.FK__VPReviewe__VPIde__3B75D760" FromRole="VPIdeaDetail" ToRole="VPReviewerDetail" />
+          <NavigationProperty Name="VPStatu" Relationship="ValuePortalModel.FK_VPIdeaDetails_VCStatus" FromRole="VPIdeaDetail" ToRole="VPStatu" />
+        </EntityType>
+        <Association Name="FK__VPComment__VPIde__38996AB5">
+          <End Type="ValuePortalModel.VPIdeaDetail" Role="VPIdeaDetail" Multiplicity="1" />
+          <End Type="ValuePortalModel.VPComment" Role="VPComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPIdeaDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPComment">
+              <PropertyRef Name="VPIdeaDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__VPReviewe__VPIde__3B75D760">
+          <End Type="ValuePortalModel.VPIdeaDetail" Role="VPIdeaDetail" Multiplicity="1" />
+          <End Type="ValuePortalModel.VPReviewerDetail" Role="VPReviewerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPIdeaDetail">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPReviewerDetail">
+              <PropertyRef Name="VPIdeaDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VPIdeaDetails_VCStatus">
+          <End Type="ValuePortalModel.VPStatu" Role="VPStatu" Multiplicity="1" />
+          <End Type="ValuePortalModel.VPIdeaDetail" Role="VPIdeaDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VPStatu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="VPIdeaDetail">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ValuePortalModelStoreContainer" CdmEntityContainer="ValuePortalEntities">
+          <EntitySetMapping Name="VPPriorities">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPPriority">
+              <MappingFragment StoreEntitySet="VPPriority">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPReviewerDetails">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPReviewerDetail">
+              <MappingFragment StoreEntitySet="VPReviewerDetails">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="FinalScore" ColumnName="FinalScore" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="BenefitScore" ColumnName="BenefitScore" />
+                <ScalarProperty Name="ReviewerComments3" ColumnName="ReviewerComments3" />
+                <ScalarProperty Name="ReviewerComments2" ColumnName="ReviewerComments2" />
+                <ScalarProperty Name="ReviewerComments" ColumnName="ReviewerComments" />
+                <ScalarProperty Name="VPIdeaDetailID" ColumnName="VPIdeaDetailID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPStatus">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPStatu">
+              <MappingFragment StoreEntitySet="VPStatus">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPComments">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPComment">
+              <MappingFragment StoreEntitySet="VPComments">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ReviewerComments" ColumnName="ReviewerComments" />
+                <ScalarProperty Name="ReviewerId" ColumnName="ReviewerId" />
+                <ScalarProperty Name="VPIdeaDetailID" ColumnName="VPIdeaDetailID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPBenefits">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPBenefit">
+              <MappingFragment StoreEntitySet="VPBenefit">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPCosts">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPCost">
+              <MappingFragment StoreEntitySet="VPCost">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPConfigurations">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPConfiguration">
+              <MappingFragment StoreEntitySet="VPConfiguration">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPBenefitScopes">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPBenefitScope">
+              <MappingFragment StoreEntitySet="VPBenefitScope">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VPIdeaDetails">
+            <EntityTypeMapping TypeName="ValuePortalModel.VPIdeaDetail">
+              <MappingFragment StoreEntitySet="VPIdeaDetails">
+                <ScalarProperty Name="BenefitScope" ColumnName="BenefitScope" />
+                <ScalarProperty Name="BenefitFactor" ColumnName="BenefitFactor" />
+                <ScalarProperty Name="Stage" ColumnName="Stage" />
+                <ScalarProperty Name="BusinessUnit" ColumnName="BusinessUnit" />
+                <ScalarProperty Name="IsLockedBy" ColumnName="IsLockedBy" />
+                <ScalarProperty Name="TeammemberIds" ColumnName="TeammemberIds" />
+                <ScalarProperty Name="UniquenessQuotient" ColumnName="UniquenessQuotient" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="IsEmailReceiptRequired" ColumnName="IsEmailReceiptRequired" />
+                <ScalarProperty Name="ExecutionApproach" ColumnName="ExecutionApproach" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+                <ScalarProperty Name="RequiredTechnologies" ColumnName="RequiredTechnologies" />
+                <ScalarProperty Name="RequiredResources" ColumnName="RequiredResources" />
+                <ScalarProperty Name="RequiredEffort" ColumnName="RequiredEffort" />
+                <ScalarProperty Name="IdeaBenefits" ColumnName="IdeaBenefits" />
+                <ScalarProperty Name="IdeaDescription" ColumnName="IdeaDescription" />
+                <ScalarProperty Name="IdeaHeadline" ColumnName="IdeaHeadline" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

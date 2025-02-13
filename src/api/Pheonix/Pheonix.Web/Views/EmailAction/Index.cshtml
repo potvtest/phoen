@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="~/Content/materialize.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link type="text/css" rel="stylesheet" href="~/fonts/font-awesome/css/font-awesome.min.css" media="screen,projection">
+    <title>Vibrant Web</title>
+
+    <link href="fav-icon/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="icon" href="~/Images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="dark-gray">
+            <h5 class="header-title">
+                <a href="https://my.v2solutions.com/"><img src="~/Images/logo-img.png" class="header-logo responsive-img" /> VIBRANT <span>WEB</span></a>
+            </h5>
+        </nav>
+    </div>
+
+    <main class="attendance-main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <div class="error-page">
+                        <div class="center-image">
+                            @if (@ViewBag.status == Status.InvalidAuthKey || @ViewBag.status == Status.InvalidUser)
+                            {
+                                <img src="~/Images/error-link.png" class="responsive-img" />
+                            }
+                            else
+                            {
+                                <img src="~/Images/annual-leave-600-x-300.png" class="responsive-img" />
+                            }
+
+                            @if (@ViewBag.status == Status.Approved)
+                            {
+                                <img src="~/Images/approved-tick.png" class="responsive-img approve-tick" />
+                            }
+                            else if (@ViewBag.status == Status.Rejected)
+                            {
+                                <img src="~/Images/rejected-tick.png" class="responsive-img approve-tick" />
+                            }
+                        </div>
+                        @if (@ViewBag.status == Status.AlreadyApproved)
+                        {
+                            <h5 class="m-top30">The leave request has already been <span class="approve-green" style="font-weight:bold;">Approved</span>.</h5>
+                        }
+                        @if (@ViewBag.status == Status.AlreadyRejected)
+                        {
+                            <h5 class="m-top30">The leave request has already been <span class="reject-red" style="font-weight:bold;">Rejected</span>.</h5>
+                        }
+                        else if (@ViewBag.status == Status.Approved)
+                        {
+                            <h5 class="m-top30">The leave request is <span class="approve-green">Approved</span>.</h5>
+                        }
+                        else if (@ViewBag.status == Status.Rejected)
+                        {
+                            <h5 class="m-top30">The leave request is <span class="reject-red">Rejected</span>.</h5>
+                        }
+                        else if (@ViewBag.status == Status.Deleted)
+                        {
+                            <h5 class="m-top30">The leave request has been <span class="approve-green">Deleted</span>.</h5>
+                        }
+                        else if (@ViewBag.status == Status.LinkExpired)
+                        {
+                            <h5 class="m-top30">The link you are trying to access is <span class="reject-red">Expired</span>.</h5>
+                        }
+                        else if (@ViewBag.status == Status.InvalidAuthKey || @ViewBag.status == Status.InvalidUser)
+                        {
+                            <h5 class="m-top30"><span class="reject-red">The link you are trying to access is invalid</span>.</h5>
+                        }
+                        <div class="m-top20">
+                            <h5>Please login to Vibrant Web Refresh to review the same.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="row footer-copyright m-bottom0">
+            <div class="col s6 m6 l6 right-align m-top20 branding">
+                &copy; 2017 V2Solutions, Inc.
+            </div>
+            <div class="col s6 m6 l6 right-align" id="browsers">
+                <ul class="right">
+                    <li>
+                        <i class="fa fa-chrome" aria-hidden="true"></i>
+                        <h6 class="margin-zero">Ver10-64-bit</h6>
+                    </li>
+                    <li>
+                        <i class="fa fa-firefox" aria-hidden="true"></i>
+                        <h6 class="margin-zero">Ver10-64-bit</h6>
+                    </li>
+                    <li>
+                        <i class="fa fa-safari" aria-hidden="true"></i>
+                        <h6 class="margin-zero">Ver10-64-bit</h6>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    @Styles.Render("~/Content/VW")
+
+</body>
+
+</html>

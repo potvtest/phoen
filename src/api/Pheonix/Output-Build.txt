@@ -1,0 +1,24 @@
+﻿1>------ Build started: Project: Pheonix.Context, Configuration: Debug Any CPU ------
+1>  Restoring NuGet packages...
+1>  To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+1>  Feeds used:
+1>    C:\Users\neeta.gaikwad\AppData\Local\NuGet\Cache
+1>    C:\Users\neeta.gaikwad\.nuget\packages\
+1>    https://api.nuget.org/v3/index.json
+1>  
+1>  All packages listed in D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.DBContext\packages.config are already installed.
+1>  Pheonix.Context -> D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.DBContext\bin\Debug\Pheonix.DBContext.dll
+2>------ Build started: Project: Pheonix.Web, Configuration: Debug Any CPU ------
+2>  Restoring NuGet packages...
+2>  To prevent NuGet from downloading packages during build, open the Visual Studio Options dialog, click on the Package Manager node and uncheck 'Allow NuGet to download missing packages'.
+2>  Feeds used:
+2>    C:\Users\neeta.gaikwad\AppData\Local\NuGet\Cache
+2>    C:\Users\neeta.gaikwad\.nuget\packages\
+2>    https://api.nuget.org/v3/index.json
+2>  
+2>  All packages listed in D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.Web\packages.config are already installed.
+2>D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.Web\Controllers\v1\IEmployeeLeaveContract.cs(12,49,12,50): warning CS0693: Type parameter 'T' has the same name as the type parameter from outer type 'Pheonix.Web.Controllers.v1.IEmployeeLeaveContract<T>'
+2>D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.Web\Controllers\v1\IEmployeeLeaveContract.cs(13,49,13,50): warning CS0693: Type parameter 'T' has the same name as the type parameter from outer type 'Pheonix.Web.Controllers.v1.IEmployeeLeaveContract<T>'
+2>D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.Web\Controllers\v1\BaseApiController.cs(18,21,18,24): warning CS0649: Field 'Pheonix.Web.Controllers.v1.BaseApiController._id' is never assigned to, and will always have its default value 0
+2>  Pheonix.Web -> D:\GitHub\phoenix-api\src\api\Pheonix\Pheonix.Web\bin\Pheonix.Web.dll
+========== Build: 2 succeeded, 0 failed, 5 up-to-date, 0 skipped ==========

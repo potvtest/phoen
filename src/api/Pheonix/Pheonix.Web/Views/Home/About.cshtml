@@ -1,0 +1,54 @@
+﻿@model Boolean
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>About</h2>
+
+<p>Use this area to provide additional information.</p>
+
+@if (Model)
+{
+    <table id="products-data">
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>MiddleName</th>
+            <th>LastName</th>
+            <th>DateOfBirth</th>
+            <th>Gender</th>
+        </tr>
+    </table>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            debugger;
+            var url = window.location.origin + "/api/person/list";
+            $.ajax
+                ({
+                    url: url,
+                    dataType: "json",
+                    success: function (data) {
+                        if (status == "success") {
+                            var html = '';
+                            $.each(data, function (index, value) {
+                                html += '<tr><td>' + value.ID +
+                                            '</td><td>' + value.FirstName +
+                                                '</td><td>' + value.MiddleName +
+                                                    '</td><td>' + value.LastName +
+                                                         '</td><td>' + value.DateOfBirth +
+                                                              '</td><td>' + value.Gender +
+                                                                   '</td></tr>';
+                            });
+                            $('#products-data tr').first().after(html);
+                        }
+                    },
+                    error: function () {
+                        console.log("error");
+                    }
+                });
+        });
+    </script>
+}

@@ -1,0 +1,1166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D99E79A-DA19-4AB8-8B0D-9B5202275B5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheonix.DBContext</RootNamespace>
+    <AssemblyName>Pheonix.DBContext</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicrosoftReportViewerWebForms_v10.1.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppraisalReporting.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppraiseForm.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppraiserForm.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApprisalParameters.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApprisalQuestions.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Approval.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovalDetail.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRoles.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaims.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogins.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BGParameterList.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillableVsNonBillableByClientProjectReport_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateAddress.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateCertification.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateEmploymentHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidatePassport.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidatePersonal.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateQualificationMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CandidateSkillMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Certifications.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckConsecutiveAbsentee_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientInformation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientName.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompensatoryOffException.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Competency.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompOff.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Component.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContractAttachments.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CosecData.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CostCenter.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Currency.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAddress.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBGMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerContactPerson.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerContract.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerList.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\ExecuteProcedure.cs" />
+    <Compile Include="DataAccess\IExecuteProcedure.cs" />
+    <Compile Include="DeletedRecordsLogDetails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryTeam.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryUnit.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Designation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailAction.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailRecussionTesting.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailTemplate.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeProfileAttachment.cs" />
+    <Compile Include="EmploymentStatus.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExistingKRAInitiation_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExitFormEmployeeDeclaration.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expense.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseApprovalStage.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseCategory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseCategory_New.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseDetails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseDetails_New.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Expense_New.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackForLeavingOrg.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="File.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Flight.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlightClass.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlightDetails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FloatingHolidayStatus.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPreferences.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetActiveKRAByPersonId_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetActiveOrEligibleListForKRA_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllActiveEmpList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllActiveEmployee_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllEligibleEmployees_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllReportsByPersonId_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAppraisalRatingByYears_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAppraisalReportByYear_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAppraisalSummary_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovalByMe_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovalForTravel_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovalHierarchy_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovalsFor_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovedExpenses_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetApprovedTravelRequests_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDetailsToApproveTravelRequest_Result.cs" />
+    <Compile Include="GetKRAAttachmentById_Result.cs" />
+    <Compile Include="GetCelebrationListForBirthDate_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCelebrationListForWeddingDate_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCelebrationListForWorkAnniversary_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCategoryList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCelebrationList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCompliance_Hours_Percentage_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCompOffApprovals_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCustomerData_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetCycleConfiguration_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmpListByProjManager_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmpProfile_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetEmpProfile_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExitProcessManager_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExitProcessManager_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpenseApprovers_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpenseApprovers_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpenseLatestActivity_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpenseLatestActivity_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpenseManager_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetExpenseToApprove_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetGradeList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetHoursForClientCompetency_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetHoursForOrgActivity_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetHoursForInvProject_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetHoursForLearning_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetKRAAllocatedEmployeesByReviewerId_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetGroupHeadEmail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetKRADetails_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetKRAFeedbackForm_Result.cs" />
+    <Compile Include="GetKRAHistoryDetails_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetKRALogs_Result.cs" />
+    <Compile Include="GetLedgerReport_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSeparationListData_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSummaryReport_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KRAFileUpload.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonKRAFeedback.cs" />
+    <Compile Include="rpt_ExitClearanceReport_Result.cs" />
+    <Compile Include="NomineeDetails.cs" />
+    <Compile Include="PurposeOfVisit.cs" />
+    <Compile Include="TravelInsurance.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateKRAHistory_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLatestActivity_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLatestActivity_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveApprovalHistory_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveApprovalHistory_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveCount_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveCount_Result1.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveData_Bck_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveData_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetLeaveforApprovals_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMySubmittedExpenses_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMySubmittedExpenses_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMySubmittedTravel_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetMySubmittedTravel_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNavigation_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetNavigation_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getPMSUserActions_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProjectAssignedWithOtherList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetProgressListById_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetReportForResignationData_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetReportingManager_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetReportingManager_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSISOAttendanceRpt_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSISOPendingApprovalDateWise_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSISOPendingApprovalUserWise_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetStatusCount_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetCustomReport_Default_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetCustomReport_DULevel_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetCustomReport_IndividualOverall_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetCustomReport_IndividualWithProject_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetCustomReport_ProjectLevel_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetByProjectID_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheetList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTimesheet_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalHours_Available_Reported_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTotalStages_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetTravelToApprove_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDeskCategories.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDeskComments.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDeskSubCategories.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HolidayList.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelBooking.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelRoomType.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InitiationList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InternetPreferences.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceSalesPeriod.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Jobdescription.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobScheduler.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenPreferences.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KRAInitiationStatus_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KRAProgress.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KRACategory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveType.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocationLeaf.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MealPreference.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MediaPreferences.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Module.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleExtension.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MultiRecordStage.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationCategory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationDevelopmentSuggestion.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Partials\IBaseModel.cs" />
+    <Compile Include="Partials\Person.cs" />
+    <Compile Include="Partials\PMSInvoiceDetails.cs" />
+    <Compile Include="Partials\ProjectList.cs" />
+    <Compile Include="Person.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonAddress.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonBGMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonBondDetail.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCertification.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonCLCredit.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonConfirmation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonContact.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDeclaration.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonDependent.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEmployment.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEmploymentChangeLog.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonEmploymentHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonExitProcessForm.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonExtension.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonHelpDesk.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonHelpDeskChangeLog.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonInRole.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonKRADetail.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonKRA.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonKRAHistoryDetail.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonKRAMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonKRAYear.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLeave.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLeaveCredit.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLeaveLedger.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonLeaveLedgerHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonMedicalHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPassport.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPastExperience.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonPersonal.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonQualificationMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonReporting.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonReportingChangeLog.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonSkillMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonSLCredit.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonVisa.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="phdbckup.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PheonixDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PheonixDb.Context.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="PheonixDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="PheonixDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PheonixDb.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="PhoenixConfig.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAction.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSActionMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationBillableType.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationExtentionRequest.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationNewRequest.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationRatings.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationReleaseRequest.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationRequest.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationRequestDetails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationRequestDetailsHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationSkillRatings.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSAllocationUpdateRequest.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSConfiguration.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSInvoice.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSInvoiceDetails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSInvoicePayments.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSResourceAllocation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSResourceAllocationHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSRole.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSRoleMapping.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSRoles.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSTasks.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSTaskTypes.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSTimesheet.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrimaryApprover.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectList.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectSkill.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qualification.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QualificationGroup.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RatingForOrganization.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RatingForReportingLead.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportAccessConfig.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDropDownConfig.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportMaster.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\ContextRepository.cs" />
+    <Compile Include="Repository\IContextRepository.cs" />
+    <Compile Include="Repository\ValuePortal\IVPContextRepository.cs" />
+    <Compile Include="Repository\ValuePortal\VPContextRepository.cs" />
+    <Compile Include="ResourcePool.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewerComment.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewerForm.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewerList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RoleEntitlement.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_AppraisalCurrentStatus_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_AppraisalReport_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_attendanceSISO_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_bench_less_than_100_new_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_bench_report_new_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_Current_Allocation1_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_Current_Allocation_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+	<Compile Include="rpt_CustomerBGCList_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_EmpLeavebal_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_EmpSkillDetails_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_EmpSkillDetails_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_EmpSkillUpdate_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_expensesummary_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_HD_All_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_HD_Detail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_HD_Issue_Status_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_HD_Monthly_Status_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_HD_tickets_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_helpdeskdetails_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_HelpdeskQuery_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_helpdesk_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_Leavebalance_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_LeaveDetail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leaveledgersummary_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransactionwithdaterange_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransaction_11_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransaction_1_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransaction_old_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransaction_recon_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransaction_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_leavetransaction_Test_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_LTran_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_PendingAppraisalStatus_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RAPercentage_sheet1_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RAPercentage_sheet2_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RMGObjective_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RMG_All_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RMG_Detail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RMG_Issue_Status_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_RMG_Monthly_Status_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_rmg_tickets_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt_SearchAllKRADetail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_skillmatrix_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_testattendancedetail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_testattendancetop5_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rpt_VW_Allocation_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAllKRAHistoryDetail_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SeatLocationPreference.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecondaryApprover.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Separation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SeparationReasonMaster.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SeparationReasons.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SeperationConfig.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SeperationProcess.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesPreferences.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SignInSignOut.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SigninSignOutStatus.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SISO.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillMatrix.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stage.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAInterviewer.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TARRF.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TARRFDetail.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TASkills.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelBookingAgency.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelCardType.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelDetails.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelExtensionHistory.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelFLightAirlines.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Traveller.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelMoneyTransactions.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelTransactions.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelUploads.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateDetailsToCloneKRA_Result.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCFApprover.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VCFConfigurationList.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VisaType.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwCurrentAllocation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwHistoryAllocation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkLocation.cs">
+      <DependentUpon>PheonixDb.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PheonixDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PheonixDb.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PheonixDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PheonixDb.edmx</DependentUpon>
+      <LastGenOutput>PheonixDb.Context.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PheonixDb.edmx.diagram">
+      <DependentUpon>PheonixDb.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PheonixDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PheonixDb.edmx</DependentUpon>
+      <LastGenOutput>PheonixDb.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

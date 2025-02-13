@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3B8F71B-5FD5-44F3-808B-6CF44385CE31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheonix.Core</RootNamespace>
+    <AssemblyName>Pheonix.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.EF6, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.EF6.0.5.0\lib\net45\AutoMapper.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.18.1\lib\net40-Client\DelegateDecompiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DelegateDecompiler.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.EntityFramework.0.18.1\lib\net45\DelegateDecompiler.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.0-beta\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicrosoftReportViewerWebForms_v10.1.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Mono.Reflection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.1.0.0.0\lib\Mono.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\DateTimeExtension.cs" />
+    <Compile Include="Helpers\EnumHelpers.cs" />
+    <Compile Include="Helpers\ExcelExportHelper.cs" />
+    <Compile Include="Helpers\QueryHelper.cs" />
+    <Compile Include="Helpers\ReportHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\ReportConfirmationDataModel.cs" />
+    <Compile Include="Report\ReportSeparationDataModel.cs" />
+    <Compile Include="Report\ReportTerminationDataModel.cs" />
+    <Compile Include="Repository\CustomerAddress\CustomerAddressRepository.cs" />
+    <Compile Include="Repository\CustomerAddress\ICustomerAddressRepository.cs" />
+    <Compile Include="Repository\CustomerContactPerson\CustomerContactPersonRepository.cs" />
+    <Compile Include="Repository\CustomerContactPerson\ICustomerContactPersonRepository.cs" />
+    <Compile Include="Repository\CustomerContract\CustomerContractRepository.cs" />
+    <Compile Include="Repository\CustomerContract\ICustomerContractRepository.cs" />
+    <Compile Include="Repository\Customer\CustomerRepository.cs" />
+    <Compile Include="Repository\Customer\ICustomerRepository.cs" />
+    <Compile Include="Repository\PersonAddress\IPersonAddressRepository.cs" />
+    <Compile Include="Repository\PersonAddress\PersonAddressRepository.cs" />
+    <Compile Include="Repository\PersonContact\IPersonContactRepository.cs" />
+    <Compile Include="Repository\PersonContact\PersonContactRepository.cs" />
+    <Compile Include="Repository\PersonEmployment\IPersonEmploymentRepository.cs" />
+    <Compile Include="Repository\PersonEmployment\PersonEmploymentRepository.cs" />
+    <Compile Include="Repository\PersonPersonal\IPersonPersonalRepository.cs" />
+    <Compile Include="Repository\PersonPersonal\PersonPersonalRepository.cs" />
+    <Compile Include="Repository\PersonSkillMapping\IPersonSkillMappingRepository.cs" />
+    <Compile Include="Repository\PersonSkillMapping\PersonSkillMappingRepository.cs" />
+    <Compile Include="Repository\Person\IPersonRepository.cs" />
+    <Compile Include="Repository\Person\PersonRepository.cs" />
+    <Compile Include="Repository\PMS\IPMSRepository.cs" />
+    <Compile Include="Repository\PMS\PMSRepository.cs" />
+    <Compile Include="Repository\Project\IProjectRepository.cs" />
+    <Compile Include="Repository\Project\ProjectRepository.cs" />
+    <Compile Include="Repository\SeparationCard\ISeparationCardRepository.cs" />
+    <Compile Include="Repository\SeparationCard\SeparationCardRepository.cs" />
+    <Compile Include="Repository\Seperation\ISeperationConfigRepository.cs" />
+    <Compile Include="Repository\Seperation\SeperationConfigRepository.cs" />
+    <Compile Include="Repository\SkillMatrix\ISkillMatrixRepository.cs" />
+    <Compile Include="Repository\SkillMatrix\SkillMatrixRepository.cs" />
+    <Compile Include="Repository\TARRFrequest\ITARRFRepository.cs" />
+    <Compile Include="Repository\TARRFrequest\TARRFRepository.cs" />
+    <Compile Include="Repository\Utils\DeletedRecordsLog.cs" />
+    <Compile Include="Repository\Utils\IDeletedRecordsLog.cs" />
+    <Compile Include="Repository\ValuePortal\IValuePortalRepository.cs" />
+    <Compile Include="Repository\ValuePortal\ValuePortalRepository.cs" />
+    <Compile Include="Services\Confirmation\ConfirmationService.cs" />
+    <Compile Include="Services\Confirmation\IConfirmationService.cs" />
+    <Compile Include="Services\CustomerAddress\CustomerAddressService.cs" />
+    <Compile Include="Services\CustomerAddress\ICustomerAddressService.cs" />
+    <Compile Include="Services\CustomerContactPerson\CustomerContactPersonService.cs" />
+    <Compile Include="Services\CustomerContactPerson\ICustomerContactPersonService.cs" />
+    <Compile Include="Services\CustomerContract\CustomerContractService.cs" />
+    <Compile Include="Services\CustomerContract\ICustomerContractService.cs" />
+    <Compile Include="Services\Customer\CustomerService.cs" />
+    <Compile Include="Services\Customer\ICustomerService.cs" />
+    <Compile Include="Services\interfaces\ICRUDService.cs" />
+    <Compile Include="Services\interfaces\ICustomerCRUDService.cs" />
+    <Compile Include="Services\interfaces\IProjectCRUDService.cs" />
+    <Compile Include="Services\interfaces\ISeperationConfigCRUDService.cs" />
+    <Compile Include="Services\Invoice\IInvoiceService.cs" />
+    <Compile Include="Services\Invoice\InvoiceService.cs" />
+    <Compile Include="Services\PersonAddress\IPersonAddressService.cs" />
+    <Compile Include="Services\PersonAddress\PersonAddressService.cs" />
+    <Compile Include="Services\PersonContact\IPersonContactService.cs" />
+    <Compile Include="Services\PersonContact\PersonContactService.cs" />
+    <Compile Include="Services\PersonEmployment\IPersonEmploymentService.cs" />
+    <Compile Include="Services\PersonEmployment\PersonEmploymentService.cs" />
+    <Compile Include="Services\PersonPersonal\IPersonPersonalService.cs" />
+    <Compile Include="Services\PersonPersonal\PersonPersonalService.cs" />
+    <Compile Include="Services\PersonSkillMapping\IPersonSkillMappingService.cs" />
+    <Compile Include="Services\PersonSkillMapping\PersonSkillMappingService.cs" />
+    <Compile Include="Services\Person\IPersonService.cs" />
+    <Compile Include="Services\Person\PersonService.cs" />
+    <Compile Include="Services\Project\IProjectService.cs" />
+    <Compile Include="Services\Project\ProjectService.cs" />
+    <Compile Include="v1\Builders\EmployeeLeave\EmployeeApprovalCompOffDetailBuilder.cs" />
+    <Compile Include="v1\Builders\EmployeeLeave\EmployeeApprovalLeaveDetailBuilder.cs" />
+    <Compile Include="v1\Builders\EmployeeLeave\EmployeeLeaveDetailBuilder.cs" />
+    <Compile Include="v1\Builders\EmployeeLeave\EmployeeLeaveBuilder.cs" />
+    <Compile Include="v1\Builders\Report\ReportBuilder.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminBGCTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminConfigService.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminConfigTaskFactory.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminDeliveryTeamTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminHolidayListTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminLeavesTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminLocationTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminResourcePoolTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminSkillsTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminTaskType.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminVCFApproverTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminVCFListTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\AdminVCFGlobalApproverTask.cs" />
+    <Compile Include="v1\Services\AdminConfig\IAdminConfigService.cs" />
+    <Compile Include="v1\Services\AdminConfig\IAdminConfigTask.cs" />
+    <Compile Include="v1\Services\Admin\AdminBulkSISO.cs" />
+    <Compile Include="v1\Services\Admin\AdminService.cs" />
+    <Compile Include="v1\Services\Admin\AdminLeaveTask.cs" />
+    <Compile Include="v1\Services\Admin\AdminCompOffTask.cs" />
+    <Compile Include="v1\Services\Admin\AdminSignInSignOutTask.cs" />
+    <Compile Include="v1\Services\Admin\AdminTaskFactory.cs" />
+    <Compile Include="v1\Services\Admin\IAdminService.cs" />
+    <Compile Include="v1\Services\Admin\IAdminStrategy.cs" />
+    <Compile Include="v1\Services\Approval\ApprovalStatusFactory.cs" />
+    <Compile Include="v1\Services\Approval\EmailActionsService.cs" />
+    <Compile Include="v1\Services\Approval\IEmailActionsService.cs" />
+    <Compile Include="v1\Services\Business\AppraisalService.cs" />
+    <Compile Include="v1\Services\Business\CandidateService.cs" />
+    <Compile Include="v1\Services\Business\CelebreationListService.cs" />
+    <Compile Include="v1\Services\Business\CompOffExceptionService.cs" />
+    <Compile Include="v1\Services\Business\HelpDeskService.cs" />
+    <Compile Include="v1\Services\Business\IAppraisalService.cs" />
+    <Compile Include="v1\Services\Business\ICandidateService.cs" />
+    <Compile Include="v1\Services\Business\ICelebreationListService.cs" />
+    <Compile Include="v1\Services\Business\ICompOffExceptionService.cs" />
+    <Compile Include="v1\Services\Business\IHelpDeskService.cs" />
+    <Compile Include="v1\Services\Business\IJobSchedulerService.cs" />
+    <Compile Include="v1\Services\Business\INewExpenseService.cs" />
+    <Compile Include="v1\Services\Business\IResourceAllocationService.cs" />
+    <Compile Include="v1\Services\Business\ITARRFService.cs" />
+    <Compile Include="v1\Services\Business\ITaskService.cs" />
+    <Compile Include="v1\Services\Business\ITimesheetService.cs" />
+    <Compile Include="v1\Services\Business\ITravelService.cs" />
+    <Compile Include="v1\Services\Business\JobSchedulerService.cs" />
+    <Compile Include="v1\Services\Business\NewExpenseService.cs" />
+    <Compile Include="v1\Services\Business\TARRFService.cs" />
+    <Compile Include="v1\Services\Business\TaskService.cs" />
+    <Compile Include="v1\Services\Business\ResourceAllocationService.cs" />
+    <Compile Include="v1\Services\Business\TimesheetService.cs" />
+    <Compile Include="v1\Services\Business\TravelService.cs" />
+    <Compile Include="v1\Services\Email\IEmailService.cs" />
+    <Compile Include="v1\Services\Approval\IApprovalService.cs" />
+    <Compile Include="v1\Services\Approval\ApprovalService.cs" />
+    <Compile Include="v1\Services\Email\EmailSendingService.cs" />
+    <Compile Include="Services\SkillMatrix\ISkillMatrixService.cs" />
+    <Compile Include="Services\SkillMatrix\SkillMatrixService.cs" />
+    <Compile Include="TransactionHooks\Predicates.cs" />
+    <Compile Include="v1\Services\Approval\ApprovalStrategyFactory.cs" />
+    <Compile Include="v1\Services\BasicOperationsService.cs" />
+    <Compile Include="v1\Services\Business\ComponentService.cs" />
+    <Compile Include="v1\Services\Business\EmployeeLeaveService.cs" />
+    <Compile Include="v1\Services\Business\EmployeeService.cs" />
+    <Compile Include="v1\Services\Business\ExpenseService.cs" />
+    <Compile Include="v1\Services\Business\IComponentService.cs" />
+    <Compile Include="v1\Services\Business\IEmployeeLeaveService.cs" />
+    <Compile Include="v1\Services\Business\IEmployeeService.cs" />
+    <Compile Include="v1\Services\Business\IExpenseService.cs" />
+    <Compile Include="v1\Services\Business\ISaveToStageService.cs" />
+    <Compile Include="v1\Services\Business\IUserMenuService.cs" />
+    <Compile Include="v1\Services\Business\SaveToStageService.cs" />
+    <Compile Include="v1\Services\Business\UserMenuService.cs" />
+    <Compile Include="v1\Services\Business\ISISOService.cs" />
+    <Compile Include="v1\Services\Business\SISOService.cs" />
+    <Compile Include="v1\Services\IBasicOperationsService.cs" />
+    <Compile Include="v1\Services\IDataService.cs" />
+    <Compile Include="v1\Services\IMainOperationsService.cs" />
+    <Compile Include="v1\Services\KRA\IKRAService.cs" />
+    <Compile Include="v1\Services\KRA\KRAService.cs" />
+    <Compile Include="v1\Services\MainOperationsService.cs" />
+    <Compile Include="v1\Services\PMS\IPMSService.cs" />
+    <Compile Include="v1\Services\PMS\PMSService.cs" />
+    <Compile Include="v1\Services\Reports\IReportService.cs" />
+    <Compile Include="v1\Services\Reports\ReportService.cs" />
+    <Compile Include="v1\Services\Seperation\IReasonConfigService.cs" />
+    <Compile Include="v1\Services\Seperation\ISeparationCardService.cs" />
+    <Compile Include="v1\Services\Seperation\ISeperationConfigService.cs" />
+    <Compile Include="v1\Services\Seperation\ReasonConfigService.cs" />
+    <Compile Include="v1\Services\Seperation\SeparationCardService.cs" />
+    <Compile Include="v1\Services\Seperation\SeperationConfigService.cs" />
+    <Compile Include="v1\Services\SyncATS\ISyncAts.cs" />
+    <Compile Include="v1\Services\SyncATS\SyncAts.cs" />
+    <Compile Include="v1\Services\ValuePortal\IValuePortalService.cs" />
+    <Compile Include="v1\Services\ValuePortal\ValuePortalService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pheonix.DBContext\Pheonix.Context.csproj">
+      <Project>{7d99e79a-da19-4ab8-8b0d-9b5202275b5c}</Project>
+      <Name>Pheonix.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pheonix.Helpers\Pheonix.Helpers.csproj">
+      <Project>{d17705ce-b24d-462f-86c0-66b54b87219a}</Project>
+      <Name>Pheonix.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pheonix.Models\Pheonix.Models.csproj">
+      <Project>{44c5c6dd-5370-47e4-a189-8cf3c8c36924}</Project>
+      <Name>Pheonix.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValuePortal\ValuePortal.csproj">
+      <Project>{bf37a27a-aacf-4bfb-b9ce-559687457170}</Project>
+      <Name>ValuePortal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Pheonix.Core.Report.ReportConfirmationDataModel.datasource" />
+    <None Include="Properties\DataSources\Pheonix.Core.Report.ReportSeparationDataModel.datasource" />
+    <None Include="Properties\DataSources\Pheonix.Core.Report.ReportTerminationDataModel.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ConfirmationLetter.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ExperienceLetter.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LegaleNotice1.rdlc" />
+    <EmbeddedResource Include="Report\LegaleNotice2.rdlc" />
+    <EmbeddedResource Include="Report\NDALetter.rdlc" />
+    <EmbeddedResource Include="Report\ProbationExtensionLetter.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RelievingLetter.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ShowCauseNotice1.rdlc" />
+    <EmbeddedResource Include="Report\ShowCauseNotice2.rdlc" />
+    <EmbeddedResource Include="Report\TerminationLetter.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

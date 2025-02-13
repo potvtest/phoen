@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44C5C6DD-5370-47E4-A189-8CF3C8C36924}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pheonix.Models</RootNamespace>
+    <AssemblyName>Pheonix.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicrosoftReportViewerWebForms_v10.1.0.0\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\AdminConfig\AdminConfigActionModel.cs" />
+    <Compile Include="Models\Admin\AdminActionModel.cs" />
+    <Compile Include="Models\Confirmation\ConfirmationFeedback.cs" />
+    <Compile Include="Models\Confirmation\Confirmations.cs" />
+    <Compile Include="Models\EnvelopeModel.cs" />
+    <Compile Include="Models\SyncATS\ATSEmployeeData.cs" />
+    <Compile Include="Models\SyncATS\EmployeeSync.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AppraisalEmployeViewModel.cs" />
+    <Compile Include="ViewModels\AppraisalFormViewModel.cs" />
+    <Compile Include="ViewModels\AppraisalReportViewModel.cs" />
+    <Compile Include="ViewModels\AppraiseeParametersViewModel.cs" />
+    <Compile Include="ViewModels\AppraiseQuestionsViewModel.cs" />
+    <Compile Include="ViewModels\ApprovalsViewModel.cs" />
+    <Compile Include="ViewModels\CelebrationListViewModel.cs" />
+    <Compile Include="ViewModels\KRAFeedbackDeleteViewModel.cs" />
+    <Compile Include="ViewModels\KRAFeedbackViewModel.cs" />
+    <Compile Include="ViewModels\KRAFileAttachment.cs" />
+    <Compile Include="ViewModels\KRALogViewModel.cs" />
+    <Compile Include="ViewModels\PersonKRAUpdateHistoryViewModel.cs" />
+    <Compile Include="ViewModels\CompOffExceptionViewModel.cs" />
+    <Compile Include="ViewModels\ContractConversionVM.cs" />
+    <Compile Include="ViewModels\DeletedRecordsLogDetailViewModel.cs" />
+    <Compile Include="ViewModels\DownloadHelpdeskReport.cs" />
+    <Compile Include="ViewModels\EmployeeCertificationViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeJoiningDetailViewModel.cs" />
+    <Compile Include="ViewModels\EmployeePersonalDetailViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeProfileViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeTerminationViewModel.cs" />
+    <Compile Include="ViewModels\ExitProcessFormDetailViewModel.cs" />
+    <Compile Include="ViewModels\ExitProcessFormViewModel.cs" />
+    <Compile Include="ViewModels\FileViewModel.cs" />
+    <Compile Include="ViewModels\HelpdeskExcelViewModelcs.cs" />
+    <Compile Include="ViewModels\InvalidKRADetails.cs" />
+    <Compile Include="ViewModels\InvoiceViewModel.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
+    <Compile Include="ViewModels\KRAAllEmployeesViewModel.cs" />
+    <Compile Include="ViewModels\KRAAllocatedEmployeesForReviewer.cs" />
+    <Compile Include="ViewModels\KRACycleConfiguration.cs" />
+    <Compile Include="ViewModels\KRAInitiationDetail.cs" />
+    <Compile Include="ViewModels\KRAMarkDone.cs" />
+    <Compile Include="ViewModels\KRAProgressViewModel.cs" />
+    <Compile Include="ViewModels\KRAReviewerListViewModel.cs" />
+    <Compile Include="ViewModels\ModuleViewModel.cs" />
+    <Compile Include="ViewModels\ModuleExtensionViewModel.cs" />
+    <Compile Include="ViewModels\PersonBondDetailViewModel.cs" />
+    <Compile Include="ViewModels\PersonCertificationViewModel.cs" />
+    <Compile Include="ViewModels\PersonConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\PersonDeclarationViewModel.cs" />
+    <Compile Include="ViewModels\PersonDependentViewModel.cs" />
+    <Compile Include="ViewModels\PersonKRADetailViewModel.cs" />
+    <Compile Include="ViewModels\PersonKRAViewModel.cs" />
+    <Compile Include="ViewModels\PersonMedicalHistoryViewModel.cs" />
+    <Compile Include="ViewModels\PersonPassportViewModel.cs" />
+    <Compile Include="ViewModels\PersonQualificationMappingViewModel.cs" />
+    <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="ViewModels\PersonAddressViewModel.cs" />
+    <Compile Include="ViewModels\PersonContactViewModel.cs" />
+    <Compile Include="ViewModels\PersonEmploymentViewModel.cs" />
+    <Compile Include="ViewModels\PersonEmploymentHistoryViewModel.cs" />
+    <Compile Include="ViewModels\PersonExtensionViewModel.cs" />
+    <Compile Include="ViewModels\PersonPersonalViewModel.cs" />
+    <Compile Include="ViewModels\PersonSkillMappingViewModel.cs" />
+    <Compile Include="ViewModels\PMSActionViewModel.cs" />
+    <Compile Include="ViewModels\PMSConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\PMSRolesViewModel.cs" />
+    <Compile Include="ViewModels\ProjectViewModel.cs" />
+    <Compile Include="ViewModels\ReportAccessConfigViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
+    <Compile Include="ViewModels\RoleEntitlementViewModel.cs" />
+    <Compile Include="ViewModels\SeparationReasonViewModel.cs" />
+    <Compile Include="ViewModels\SeperationTerminationViewModel.cs" />
+    <Compile Include="ViewModels\SeperationViewModel.cs" />
+    <Compile Include="ViewModels\SeperationConfigViewModel.cs" />
+    <Compile Include="ViewModels\SISOViewModel.cs" />
+    <Compile Include="ViewModels\SkillMatrixViewModel.cs" />
+    <Compile Include="ViewModels\StageViewModel.cs" />
+    <Compile Include="ViewModels\TravelViewModel.cs" />
+    <Compile Include="ViewModels\VCIdeaMasterViewModel.cs" />
+    <Compile Include="ViewModels\LimitedDataIdeaDetailsViewModel.cs" />
+    <Compile Include="ViewModels\VPAllMastersdataViewModel.cs" />
+    <Compile Include="ViewModels\VPApproverFlowHandlerModel.cs" />
+    <Compile Include="ViewModels\VPBenefitViewModel.cs" />
+    <Compile Include="ViewModels\VPBUApproverHandlerModel.cs" />
+    <Compile Include="ViewModels\VPCommentsViewModel.cs" />
+    <Compile Include="ViewModels\VPConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\VPBenefitScopeViewModel.cs" />
+    <Compile Include="ViewModels\VPCostViewModel.cs" />
+    <Compile Include="ViewModels\VPPriorityViewModel.cs" />
+    <Compile Include="ViewModels\VPStatusViewModel.cs" />
+    <Compile Include="ViewModels\VPSubmittedCountViewModel.cs" />
+    <Compile Include="VM\Classes\Appraisal\AppraisalSummaryModel.cs" />
+    <Compile Include="VM\Classes\ApprovalDetailViewModel.cs" />
+    <Compile Include="VM\Classes\Appraisal\AppraisalListModel.cs" />
+    <Compile Include="VM\Classes\Appraisal\AppraiseeAnswerModel.cs" />
+    <Compile Include="VM\Classes\Appraisal\AppraiseeFormModel.cs" />
+    <Compile Include="VM\Classes\Appraisal\AppraiserFormModel.cs" />
+    <Compile Include="VM\Classes\ApprovalDetailVM.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateAddressViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateCertificationViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateEmploymentHistoryViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidatePassportViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidatePersonalViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateQualificationMappingViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateSkillMappingViewModel.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateToEmployee.cs" />
+    <Compile Include="VM\Classes\Candidate\CandidateViewModel.cs" />
+    <Compile Include="VM\Classes\ChangeSet.cs" />
+    <Compile Include="VM\Classes\Employee\CorrectionEmployee.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeAdminHistory.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeApproval.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeApprovalViewModel.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeCertification.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeCompetency.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeDesignation.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeEmploymentHistory.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeManagerViewModel.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeMedicalHistory.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeMyTeam.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeOrganizaionDetails.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeePassport.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeePreviousExperience.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeProfileAttachmentDetails.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeRole.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeSearchCriteria.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeSearchFilters.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeSearchList.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeSittingLocation.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeWorkLocation.cs" />
+    <Compile Include="VM\Classes\Employee\EmploymentStatusList.cs" />
+    <Compile Include="VM\Classes\Employee\EmploymentHelpDeskCategories.cs" />
+    <Compile Include="VM\Classes\Expense\ExpenseDropdowns.cs" />
+    <Compile Include="VM\Classes\Expense\PhotoViewModel.cs" />
+    <Compile Include="VM\Classes\Expense\StageStatus.cs" />
+    <Compile Include="VM\Classes\HelpDesk\HelpDeskCommentModel.cs" />
+    <Compile Include="VM\Classes\HelpDesk\HelpDeskListFilterObj.cs" />
+    <Compile Include="VM\Classes\HelpDesk\HelpDeskListModel.cs" />
+    <Compile Include="VM\Classes\HelpDesk\HelpDeskModel.cs" />
+    <Compile Include="VM\Classes\HelpDesk\HelpDeskReadOnlyModel.cs" />
+    <Compile Include="VM\Classes\ResourceAllocationRequestDetailViewModel.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\CurrentResourceAllocationModel.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\ProjectSkillDetails.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RA.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RACurrentAllocation.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAEmploymentDetails.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAExtensionAllocations.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAExtentionRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAGetRaisedRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAGetRaisedRequestDetails.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAHistoryAllocation.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAMyAllocation.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RANewAllocations.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RANewRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAPercentage.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RASubProject.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAProject.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAProjectAccess.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAProjectedAllocation.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAProjectSkillRatings.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RARaisedRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RARatings.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RARejectRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAReleaseRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RARequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RARequestDetail.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAResource.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAUpdateAllocations.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAUpdateRequest.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\RAReleaseAllocations.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\ResourceAllocationDetailModel.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\ResourceAllocationModel.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\ResourceAllocationProjectDetails.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\ResourceAllocationResponse.cs" />
+    <Compile Include="VM\Classes\ResourceAllocation\ResourceViewModel.cs" />
+    <Compile Include="VM\Classes\TalentAcqRRF\TAInterviewerViewModel.cs" />
+    <Compile Include="VM\Classes\TalentAcqRRF\TARRFDetailViewModel.cs" />
+    <Compile Include="VM\Classes\TalentAcqRRF\TARRFViewModel.cs" />
+    <Compile Include="VM\Classes\TalentAcqRRF\TASkillViewModel.cs" />
+    <Compile Include="VM\Classes\Task\TasksListModel.cs" />
+    <Compile Include="VM\Classes\Task\TasksViewModel.cs" />
+    <Compile Include="VM\Classes\Timesheet\BillableVsNonBillableViewModel.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetCustomReportObject.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetCustomReportViewModel.cs" />
+    <Compile Include="VM\Classes\Timesheet\EmployeeListForMyTeam.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetExportViewModel.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetLeaveCount.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetMultipleEntryViewModel.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetMyTeamTabViewModel.cs" />
+    <Compile Include="VM\Classes\Timesheet\TimesheetViewModel.cs" />
+    <Compile Include="VM\Classes\Travel\ClientInformationVM.cs" />
+    <Compile Include="VM\Classes\Travel\ClientNameVM.cs" />
+    <Compile Include="VM\Classes\Travel\NomineeDetailsVM.cs" />
+    <Compile Include="VM\Classes\Travel\TravelExtension.cs" />
+    <Compile Include="VM\Classes\Travel\TravelFlight.cs" />
+    <Compile Include="VM\Classes\Travel\TravelHotelBooking.cs" />
+    <Compile Include="VM\Classes\Travel\KitchenPreferences.cs" />
+    <Compile Include="VM\Classes\Travel\TravelListViewModel.cs" />
+    <Compile Include="VM\Classes\Travel\TravelMediaPreferences.cs" />
+    <Compile Include="VM\Classes\Travel\MoneyTransactionViewModel.cs" />
+    <Compile Include="VM\Classes\Travel\TravelServicesPreferences.cs" />
+    <Compile Include="VM\Classes\Travel\TravelDetailsVM.cs" />
+    <Compile Include="VM\Classes\Travel\UploadedDocumentViewModel.cs" />
+    <Compile Include="VM\CompOffViewModel.cs" />
+    <Compile Include="VM\CustomerViewModel.cs" />
+    <Compile Include="VM\DeleletPersonArrearViewModel.cs" />
+    <Compile Include="VM\ExpenseCategoryViewModel.cs" />
+    <Compile Include="VM\FHCheckListViewModel.cs" />
+    <Compile Include="VM\FHLeaveViewModel.cs" />
+    <Compile Include="VM\Interfaces\Employee\ICorrectionEmployee.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeDesignation.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeSittingLocation.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmploymentHelpDeskCategories.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmploymentStatusList.cs" />
+    <Compile Include="VM\Interfaces\ILocationSpecificLeaves.cs" />
+    <Compile Include="VM\Interfaces\IPersonSISO.cs" />
+    <Compile Include="VM\Interfaces\Travel\IClientInformation.cs" />
+    <Compile Include="VM\Interfaces\Travel\IClientName.cs" />
+    <Compile Include="VM\Interfaces\Travel\INomineeDetails.cs" />
+    <Compile Include="VM\Interfaces\Travel\ITravelDetails.cs" />
+    <Compile Include="VM\Interfaces\Travel\ITravelModel.cs" />
+    <Compile Include="VM\DropdownItems.cs" />
+    <Compile Include="VM\Classes\Expense\EmployeeExpense.cs" />
+    <Compile Include="VM\Classes\Expense\EmployeeExpenseDetails.cs" />
+    <Compile Include="VM\EmployeeAddressViewModel.cs" />
+    <Compile Include="VM\EmployeeLeaveViewModel.cs" />
+    <Compile Include="VM\EmployeePassportViewModel.cs" />
+    <Compile Include="VM\EmployeeProfileViewModel.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeAddress.cs" />
+    <Compile Include="VM\ExpenseViewModel.cs" />
+    <Compile Include="VM\DashboardApprovalStatus.cs" />
+    <Compile Include="VM\HelpDeskViewModel.cs" />
+    <Compile Include="VM\HolidayListViewModel.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeAddress.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeBasicProfile.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeApproval.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeApprovalViewModel.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeBasicProfile.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeDeclaration.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeCertification.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeDeclaration.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeDependent.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeDependent.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeEmergencyContact.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeEmergencyContact.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeePersonalDetails.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeEmploymentHistory.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeManagerViewModel.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeMedicalHistory.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeMyTeam.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeOrganizationDetails.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeePassport.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeePersonalDetails.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeProfessionalDetails.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeProfessionalDetails.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeProfile.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeQualification.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeQualification.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeSkill.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeRole.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeSkill.cs" />
+    <Compile Include="VM\Classes\Employee\EmployeeVisa.cs" />
+    <Compile Include="VM\Interfaces\Employee\IEmployeeVisa.cs" />
+    <Compile Include="VM\Interfaces\Expense\IExpense.cs" />
+    <Compile Include="VM\Interfaces\Expense\IExpenseDetail.cs" />
+    <Compile Include="VM\Interfaces\IAvailableLeaves.cs" />
+    <Compile Include="VM\Interfaces\IBaseModel.cs" />
+    <Compile Include="VM\Interfaces\IEmployeeLeave.cs" />
+    <Compile Include="VM\Interfaces\IHolidayList.cs" />
+    <Compile Include="VM\Interfaces\IUserMenu.cs" />
+    <Compile Include="VM\Interfaces\RRF\IRRFCandidate.cs" />
+    <Compile Include="VM\Interfaces\RRF\IRRFComment.cs" />
+    <Compile Include="VM\Interfaces\RRF\IRRFSkills.cs" />
+    <Compile Include="VM\Interfaces\Travel\IUploadedDocumentViewModel.cs" />
+    <Compile Include="VM\JobSchedulerViewModel.cs" />
+    <Compile Include="VM\KRAReportViewModel.cs" />
+    <Compile Include="VM\LeavesCreditViewModel.cs" />
+    <Compile Include="VM\LeavesToCreditViewModel.cs" />
+    <Compile Include="VM\LeaveViewModel.cs" />
+    <Compile Include="VM\LocationSpecificLeavesViewModel.cs" />
+    <Compile Include="VM\NewEmployeeExpenseDetails.cs" />
+    <Compile Include="VM\NewExpenseViewModel.cs" />
+    <Compile Include="VM\PersonARStatus.cs" />
+    <Compile Include="VM\PersonLeaveViewModel.cs" />
+    <Compile Include="VM\PersonArrearViewModel.cs" />
+    <Compile Include="VM\PersonSISOViewModel.cs" />
+    <Compile Include="VM\SISOAttendanceRptModel.cs" />
+    <Compile Include="VM\SISOAttendanceRptDTOModel.cs" />
+    <Compile Include="VM\SISORejectViewModel.cs" />
+    <Compile Include="VM\ReportSetting.cs" />
+    <Compile Include="VM\RRFCandidateViewModel .cs" />
+    <Compile Include="VM\RRFCommentViewModel .cs" />
+    <Compile Include="VM\RRFDetailsViewModels.cs" />
+    <Compile Include="VM\RRFSkillsViewModel .cs" />
+    <Compile Include="VM\RRFViewModel.cs" />
+    <Compile Include="VM\SISOApprovalViewModel.cs" />
+    <Compile Include="VM\UserMenuViewModel.cs" />
+    <Compile Include="VM\SISOManualAutoViewModel.cs" />
+    <Compile Include="VM\EmployeeSISOViewModel.cs" />
+    <Compile Include="VM\Interfaces\IEmployeeSISO.cs" />
+    <Compile Include="VM\Interfaces\IAttendanceManualAuto.cs" />
+    <Compile Include="VM\VPSubmittedIdeaViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pheonix.DBContext\Pheonix.Context.csproj">
+      <Project>{7d99e79a-da19-4ab8-8b0d-9b5202275b5c}</Project>
+      <Name>Pheonix.Context</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VM\Classes\KRA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

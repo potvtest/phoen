@@ -1,0 +1,12 @@
+﻿Generated model file: PheonixDb.edmx.
+Loading metadata from the database took 00:00:08.0638320.
+Generating the model took 00:00:21.1778550.
+Generated model file: PheonixDb.edmx.
+Loading metadata from the database took 00:00:00.6452467.
+Generating the model took 00:00:01.7368564.
+Generated model file: PheonixDb.edmx.
+Loading metadata from the database took 00:00:00.6064503.
+Generating the model took 00:00:01.4005193.
+Generated model file: PheonixDb.edmx.
+Loading metadata from the database took 00:00:03.1021735.
+Generating the model took 00:00:16.9428827.

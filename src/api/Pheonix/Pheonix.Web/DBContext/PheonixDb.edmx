@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PhoenixModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="Salutation" Type="varchar" MaxLength="10" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonEmployment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" />
+          <Property Name="JoiningDate" Type="date" />
+          <Property Name="DesignationID" Type="int" />
+          <Property Name="SeparationDate" Type="date" />
+          <Property Name="OfficialEmail" Type="varchar" MaxLength="100" />
+          <Property Name="PersonalEmail" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PersonSkillMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SkillID" Type="int" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="ExperienceYears" Type="int" Nullable="false" />
+          <Property Name="ExperienceMonths" Type="int" />
+          <Property Name="HasCoreCompetency" Type="bit" Nullable="false" />
+          <Property Name="SkillRating" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillMatrix">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="SkillCategory" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PersonEmployment_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="PersonEmployment" Type="Self.PersonEmployment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonEmployment">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PhoenixModelStoreContainer">
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonEmployment" EntityType="Self.PersonEmployment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonSkillMapping" EntityType="Self.PersonSkillMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SkillMatrix" EntityType="Self.SkillMatrix" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PersonEmployment_Person" Association="Self.FK_PersonEmployment_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonEmployment" EntitySet="PersonEmployment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhoenixModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PhoenixEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PersonSkillMappings" EntityType="PhoenixModel.PersonSkillMapping" />
+          <EntitySet Name="SkillMatrices" EntityType="PhoenixModel.SkillMatrix" />
+          <EntitySet Name="People" EntityType="PhoenixModel.Person" />
+          <EntitySet Name="PersonEmployments" EntityType="PhoenixModel.PersonEmployment" />
+          <AssociationSet Name="FK_PersonEmployment_Person" Association="PhoenixModel.FK_PersonEmployment_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonEmployment" EntitySet="PersonEmployments" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PersonSkillMapping">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SkillID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="ExperienceYears" Type="Int32" Nullable="false" />
+          <Property Name="ExperienceMonths" Type="Int32" />
+          <Property Name="HasCoreCompetency" Type="Boolean" Nullable="false" />
+          <Property Name="SkillRating" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillMatrix">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SkillCategory" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Salutation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PersonEmployments" Relationship="PhoenixModel.FK_PersonEmployment_Person" FromRole="Person" ToRole="PersonEmployment" />
+        </EntityType>
+        <EntityType Name="PersonEmployment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PersonID" Type="Int32" />
+          <Property Name="JoiningDate" Type="DateTime" Precision="0" />
+          <Property Name="DesignationID" Type="Int32" />
+          <Property Name="SeparationDate" Type="DateTime" Precision="0" />
+          <Property Name="OfficialEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PersonalEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="PhoenixModel.FK_PersonEmployment_Person" FromRole="PersonEmployment" ToRole="Person" />
+        </EntityType>
+        <Association Name="FK_PersonEmployment_Person">
+          <End Type="PhoenixModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="PhoenixModel.PersonEmployment" Role="PersonEmployment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonEmployment">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PhoenixModelStoreContainer" CdmEntityContainer="PhoenixEntities">
+          <EntitySetMapping Name="PersonSkillMappings">
+            <EntityTypeMapping TypeName="PhoenixModel.PersonSkillMapping">
+              <MappingFragment StoreEntitySet="PersonSkillMapping">
+                <ScalarProperty Name="SkillRating" ColumnName="SkillRating" />
+                <ScalarProperty Name="HasCoreCompetency" ColumnName="HasCoreCompetency" />
+                <ScalarProperty Name="ExperienceMonths" ColumnName="ExperienceMonths" />
+                <ScalarProperty Name="ExperienceYears" ColumnName="ExperienceYears" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillMatrices">
+            <EntityTypeMapping TypeName="PhoenixModel.SkillMatrix">
+              <MappingFragment StoreEntitySet="SkillMatrix">
+                <ScalarProperty Name="SkillCategory" ColumnName="SkillCategory" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="PhoenixModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonEmployments">
+            <EntityTypeMapping TypeName="PhoenixModel.PersonEmployment">
+              <MappingFragment StoreEntitySet="PersonEmployment">
+                <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+                <ScalarProperty Name="OfficialEmail" ColumnName="OfficialEmail" />
+                <ScalarProperty Name="SeparationDate" ColumnName="SeparationDate" />
+                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+                <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
